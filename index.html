@@ -3,72 +3,122 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ALPHA GOLD | วิเคราะห์ทองคำ XAUUSD</title>
+<meta name="theme-color" content="#080706">
+<title>ALPHA GOLD | วิเคราะห์ตลาดทองคำ</title>
 <style>
-:root{--gold:#f7c84b;--gold2:#a97818;--bg:#050708;--panel:#0d1215;--line:#55421b;--muted:#b8b8b8;--green:#00d69a;--red:#ff4d5d}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% 0,#1c1608 0,#080b0d 36%,#030506 100%);color:#fff;font-family:Arial,"Noto Sans Thai",sans-serif}
-a{color:inherit;text-decoration:none}.wrap{width:min(1160px,92%);margin:auto}
-header{position:sticky;top:0;z-index:10;background:#050708ed;border-bottom:1px solid #8b681e}
-nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:900;font-style:italic;font-size:25px;line-height:1;color:var(--gold);letter-spacing:1px}.brand small{display:block;color:#fff;font-size:11px;letter-spacing:4px;margin-left:34px}
-.links{display:flex;gap:22px;color:#ddd;font-size:14px}.links a:hover{color:var(--gold)}
-.actions{display:flex;gap:10px}.btn{display:inline-block;border:1px solid var(--gold);padding:11px 18px;border-radius:9px;font-weight:700;font-size:14px;cursor:pointer}.btn.gold{background:linear-gradient(135deg,#ffe68b,#d69a21);color:#160f02;box-shadow:0 0 18px #e9ae3455}.btn.dark{background:#080a0b;color:#fff}
-.hero{display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:35px;padding:68px 0 42px;min-height:440px}.eyebrow{color:var(--gold);letter-spacing:3px;font-size:13px;font-weight:bold}.hero h1{font-size:clamp(38px,6vw,68px);line-height:1.02;margin:14px 0;color:#fff;text-shadow:0 3px 22px #e2a52b55}.hero h1 span{color:var(--gold)}.hero p{color:#d4d4d4;line-height:1.8;font-size:17px;max-width:590px}.ticks{padding:0;list-style:none;color:#eee;line-height:2}.ticks li:before{content:"✓";color:var(--gold);font-weight:bold;margin-right:10px}.hero-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
-.visual{min-height:320px;border:1px solid #75571d;border-radius:22px;background:linear-gradient(145deg,#17140d,#080c0f 60%,#251a08);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;box-shadow:0 15px 55px #000}.visual:before{content:"";position:absolute;width:290px;height:290px;border-radius:50%;border:1px solid #e7b84a55;box-shadow:0 0 65px #d69a2144,inset 0 0 45px #d69a2133}.visual .symbol{font-size:130px;font-weight:900;color:var(--gold);text-shadow:0 0 28px #e8ad36;z-index:1}.visual .chartline{position:absolute;bottom:45px;left:8%;right:8%;height:90px;border-bottom:2px solid #00c994;transform:skewY(-12deg);opacity:.8}.visual .bars{position:absolute;inset:20px;display:flex;align-items:end;gap:12px;opacity:.35}.bars i{display:block;flex:1;background:linear-gradient(#eac04e,#785016);height:var(--h);border-radius:3px 3px 0 0}
-.section-title{text-align:center;margin:28px 0 22px}.section-title h2{margin:0;color:var(--gold);font-size:27px}.section-title p{color:var(--muted);margin:8px 0}
-.features{display:grid;grid-template-columns:repeat(5,1fr);gap:13px}.feature,.panel,.service{background:linear-gradient(145deg,#111719,#080b0d);border:1px solid #393327;border-radius:14px;padding:20px;text-align:center}.feature .ico{font-size:30px;color:var(--gold)}.feature h3{font-size:16px;margin:10px 0 5px}.feature p{font-size:13px;color:#bbb;margin:0}
-.market{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:15px;margin:28px 0}.panel{text-align:left;padding:20px}.panel h3{margin:0 0 15px;color:var(--gold)}.price{font-size:32px;font-weight:800}.down{color:var(--red);margin-top:7px}.levels{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px;color:#ddd;font-size:14px}.levels b{color:var(--gold);text-align:right}.chart{height:170px;position:relative;overflow:hidden;background:repeating-linear-gradient(0deg,#111a1d 0,#111a1d 1px,transparent 1px,transparent 34px),repeating-linear-gradient(90deg,#111a1d 0,#111a1d 1px,transparent 1px,transparent 42px);border-radius:8px}.zone{position:absolute;left:8%;right:8%;padding:7px;text-align:center;font-size:12px;font-weight:bold}.sell{top:12px;background:#9e263cbb}.fvg{top:66px;left:38%;right:25%;background:#087e76bb}.buy{bottom:12px;background:#1459b9cc}.news-item{border-bottom:1px solid #302c22;padding:10px 0;color:#ddd;font-size:14px;line-height:1.5}.news-item:last-child{border:0}
-.banner{margin:28px 0;padding:25px 30px;border:1px solid var(--gold2);border-radius:16px;background:linear-gradient(90deg,#171006,#3b290c,#0a0d0f);display:flex;justify-content:space-between;align-items:center;gap:20px}.banner h2{margin:0 0 5px;color:var(--gold)}.banner p{margin:0;color:#ddd}
-.services{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:22px 0 40px}.service{display:flex;align-items:center;gap:12px;text-align:left}.service span{font-size:30px}.service b{display:block}.service small{color:#aaa}
-footer{border-top:1px solid #8b681e;padding:30px 0;color:#bbb}.foot{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}.foot h4{color:var(--gold);margin:0 0 10px}.foot a{display:block;margin:7px 0;font-size:14px}
-.modal{display:none;position:fixed;inset:0;background:#000c;z-index:30;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.dialog{width:min(420px,100%);background:#0d1215;border:1px solid var(--gold);border-radius:16px;padding:25px;box-shadow:0 0 40px #000}.dialog h2{color:var(--gold);margin-top:0}.dialog input{width:100%;padding:13px;margin:7px 0 13px;background:#050708;border:1px solid #51452d;border-radius:8px;color:white}.dialog .btn{width:100%;text-align:center}.close{float:right;color:#ddd;background:none;border:0;font-size:24px;cursor:pointer}
-.note{font-size:12px;color:#aaa;line-height:1.5;margin-top:14px}
-@media(max-width:850px){.links{display:none}.hero{grid-template-columns:1fr;padding-top:42px}.visual{min-height:240px}.features{grid-template-columns:repeat(2,1fr)}.market{grid-template-columns:1fr}.services{grid-template-columns:repeat(2,1fr)}.banner{align-items:flex-start;flex-direction:column}}
-@media(max-width:480px){nav{min-height:62px}.brand{font-size:20px}.actions .btn{padding:9px 10px;font-size:12px}.hero h1{font-size:43px}.features,.services{grid-template-columns:1fr 1fr}.feature{padding:14px 8px}.feature h3{font-size:14px}.banner{padding:20px}.price{font-size:28px}}
+:root{--gold:#f7c928;--gold2:#ffdf65;--bg:#070706;--muted:#c8c2b5}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:#fff;font-family:Arial,"Noto Sans Thai",Tahoma,sans-serif}
+a{color:inherit;text-decoration:none}
+header{height:86px;display:flex;align-items:center;justify-content:space-between;padding:0 4.5%;border-bottom:1px solid #9d771c;background:#050505;position:sticky;top:0;z-index:10}
+.brand{display:flex;align-items:center;gap:12px;min-width:255px}
+.brand-mark{width:52px;height:52px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:35px;font-weight:900;font-style:italic;box-shadow:0 0 16px #e7ad1b55}
+.brand-name{font-size:27px;font-weight:900;letter-spacing:.5px;line-height:1}
+.brand-tag{font-size:9px;color:var(--gold);letter-spacing:1px;margin-top:5px}
+nav{display:flex;gap:30px;align-items:center;font-size:15px;font-weight:700}
+nav a:hover{color:var(--gold)}
+.nav-actions{display:flex;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:13px;padding:13px 20px;font-weight:800;border:1.5px solid var(--gold);transition:.2s;cursor:pointer}
+.btn-outline{background:#080706;color:#fff}
+.btn-gold{background:linear-gradient(135deg,#ffe36d,#e9ad18);color:#100d05;border:0;box-shadow:0 0 20px #f3bd2a44}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.12)}
+.menu{display:none;background:none;border:1px solid #9a741b;color:var(--gold);font-size:24px;border-radius:8px;padding:5px 12px}
+.hero{max-width:1500px;margin:auto;min-height:610px;padding:50px 4.5% 38px;display:grid;grid-template-columns: .95fr 1.05fr;align-items:center;gap:20px;overflow:hidden;background:radial-gradient(ellipse at 76% 44%,#5b390d55 0,transparent 47%)}
+.kicker{color:var(--gold);font-size:14px;font-weight:800;letter-spacing:1.5px;margin-bottom:42px}
+h1{font-size:clamp(64px,7vw,104px);line-height:.88;letter-spacing:1px;margin:0 0 18px;font-weight:950}
+h1 span{display:block;color:var(--gold)}
+.tagline{font-size:14px;letter-spacing:1px;font-weight:800;margin-bottom:44px}
+.hero h2{font-size:clamp(27px,3vw,39px);line-height:1.25;color:var(--gold);margin:0 0 4px}
+.hero h3{font-size:clamp(21px,2.3vw,30px);line-height:1.35;margin:0 0 18px}
+.description{font-size:19px;color:#d1ccc3;line-height:1.65;margin:0 0 28px}
+.telegram{display:inline-flex;align-items:center;gap:18px;padding:12px 25px 12px 15px;border:3px solid var(--gold);border-radius:60px;box-shadow:0 0 18px #f7c92899,inset 0 0 12px #f7c92822;background:#050505;font-size:clamp(20px,2.3vw,30px);font-weight:900}
+.telegram .plane{width:62px;height:62px;border-radius:50%;background:#0b9fe5;display:grid;place-items:center;font-size:31px;flex:none}
+.telegram em{color:var(--gold);font-style:normal}
+.telegram small{display:block;font-size:16px;font-weight:700}
+.art-wrap{display:flex;align-items:center;justify-content:center;min-width:0}
+.art-wrap img{width:100%;max-width:760px;height:auto;object-fit:contain;filter:drop-shadow(0 0 24px #e4a51b33)}
+.market-strip{border-top:1px solid #9b741d;border-bottom:1px solid #9b741d;display:grid;grid-template-columns:repeat(4,1fr);padding:17px 4.5%;background:#090806}
+.market{padding:0 28px;border-right:1px solid #4d3b19}
+.market:last-child{border:0}
+.market strong{display:block;font-size:14px;letter-spacing:1px}
+.market span{display:block;color:#19d69b;font-size:12px;margin-top:6px}
+.pillars{max-width:1400px;margin:auto;padding:38px 4.5% 55px;display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.pillar{text-align:center;padding:18px 8px;border-right:1px solid #5b461d}
+.pillar:last-child{border:0}
+.pillar .ico{width:65px;height:65px;border:1.5px solid var(--gold);border-radius:50%;display:grid;place-items:center;margin:0 auto 12px;color:var(--gold);font-size:31px}
+.pillar b{display:block;letter-spacing:2px;font-size:16px}
+.pillar small{display:block;color:var(--muted);margin-top:7px;font-size:14px}
+.contact-float{position:fixed;right:26px;bottom:24px;z-index:20;border:2px solid var(--gold);border-radius:50px;background:#090806;color:white;padding:13px 23px;font-size:20px;font-weight:900;box-shadow:0 0 22px #eebd29aa}
+.contact-float span{color:var(--gold);font-size:25px;margin-right:9px}
+footer{text-align:center;color:#8d8576;border-top:1px solid #392d16;padding:20px;font-size:12px}
+@media(max-width:900px){
+ header{height:72px;padding:0 4%}.brand{min-width:0}.brand-mark{width:43px;height:43px;font-size:29px}.brand-name{font-size:21px}.brand-tag{font-size:7px}
+ nav{display:none;position:absolute;top:72px;left:0;right:0;background:#090806;padding:20px;flex-direction:column;gap:18px;border-bottom:1px solid #8c681b}
+ nav.open{display:flex}.menu{display:block}.nav-actions .btn{padding:10px 12px;font-size:13px}
+ .hero{grid-template-columns:1fr;padding:35px 6% 25px;gap:5px}.kicker{margin-bottom:25px;font-size:12px}
+ h1{font-size:68px}.tagline{margin-bottom:28px}.hero h2{font-size:29px}.hero h3{font-size:22px}.description{font-size:16px}
+ .telegram{font-size:22px}.telegram .plane{width:52px;height:52px}.telegram small{font-size:14px}
+ .art-wrap{margin-top:12px}.art-wrap img{max-width:570px}
+ .market-strip{grid-template-columns:repeat(2,1fr);gap:15px}.market{padding:8px 12px}.market:nth-child(2){border:0}
+ .pillars{grid-template-columns:repeat(2,1fr);padding-top:25px}.pillar:nth-child(2){border:0}
+}
+@media(max-width:480px){
+ .brand-name{font-size:18px}.brand-tag{letter-spacing:0}.nav-actions{gap:6px}.nav-actions .btn{padding:9px 10px;font-size:11px}
+ h1{font-size:60px}.hero{padding-top:28px}.telegram{padding:9px 15px 9px 9px;gap:10px;font-size:19px}
+ .telegram .plane{width:46px;height:46px;font-size:25px}.telegram small{font-size:12px}
+ .contact-float{right:12px;bottom:12px;font-size:15px;padding:10px 16px}
+}
 </style>
 </head>
 <body>
-<header><div class="wrap"><nav>
-<a class="brand" href="#">Ⓐ ALPHA <small>GOLD</small></a>
-<div class="links"><a href="#home">หน้าแรก</a><a href="#analysis">วิเคราะห์ทอง</a><a href="#tools">เครื่องมือเทรด</a><a href="#news">ข่าวสาร</a><a href="#members">แพ็กเกจ</a></div>
-<div class="actions"><button class="btn dark" onclick="openModal('login')">เข้าสู่ระบบ</button><button class="btn gold" onclick="openModal('register')">สมัครสมาชิก</button></div>
-</nav></div></header>
-<main class="wrap">
-<section class="hero" id="home">
-<div><div class="eyebrow">PRECISION • DISCIPLINE • GOLD</div><h1>ALPHA<br><span>GOLD</span></h1>
-<p>วิเคราะห์ทองคำ XAUUSD แบบมืออาชีพ รวมมุมมองทางเทคนิค ข่าวเศรษฐกิจ และเครื่องมือช่วยวางแผนเทรดไว้ในที่เดียว</p>
-<ul class="ticks"><li>แนวทาง BUY / SELL พร้อมจุดเข้าและ Stop Loss</li><li>วิเคราะห์ SMC • DZ/SZ • FVG • BOS</li><li>แนวรับ–แนวต้าน และเป้าหมาย TP1–TP3</li><li>ติดตามข่าวเศรษฐกิจที่ส่งผลต่อราคาทอง</li></ul>
-<div class="hero-buttons"><button class="btn gold" onclick="openModal('register')">สมัครสมาชิกฟรี</button><button class="btn dark" onclick="openModal('login')">เข้าสู่ระบบ</button></div></div>
-<div class="visual" aria-label="ALPHA GOLD graphic"><div class="bars"><i style="--h:30%"></i><i style="--h:48%"></i><i style="--h:40%"></i><i style="--h:68%"></i><i style="--h:55%"></i><i style="--h:82%"></i><i style="--h:70%"></i><i style="--h:95%"></i><i style="--h:78%"></i></div><div class="symbol">Ⓐ</div><div class="chartline"></div></div>
+<header>
+  <a class="brand" href="#home" aria-label="ALPHA GOLD หน้าแรก">
+    <div class="brand-mark">A</div>
+    <div><div class="brand-name">ALPHA GOLD</div><div class="brand-tag">TRADE SMART • GROW STEADY • ACHIEVE FREEDOM</div></div>
+  </a>
+  <button class="menu" onclick="document.querySelector('nav').classList.toggle('open')" aria-label="เปิดเมนู">☰</button>
+  <nav>
+    <a href="#home">หน้าแรก</a><a href="#analysis">วิเคราะห์ตลาด</a><a href="#signals">สัญญาณเทรด</a><a href="#tools">เครื่องมือเทรด</a><a href="#knowledge">ความรู้</a>
+  </nav>
+  <div class="nav-actions">
+    <a class="btn btn-outline" href="#login">เข้าสู่ระบบ</a>
+    <a class="btn btn-gold" href="#register">สมัครสมาชิก</a>
+  </div>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="hero-copy">
+    <div class="kicker">XAUUSD&nbsp; • &nbsp;FOREX&nbsp; • &nbsp;TRADING&nbsp; • &nbsp;INVESTMENT</div>
+    <h1>ALPHA <span>GOLD</span></h1>
+    <div class="tagline">TRADE SMART&nbsp; • &nbsp;GROW STEADY&nbsp; • &nbsp;ACHIEVE FREEDOM</div>
+    <h2>มากกว่าการเทรด</h2>
+    <h3>คือเส้นทางสู่ “อิสรภาพทางการเงิน”</h3>
+    <p class="description">วิเคราะห์อย่างมีระบบ&nbsp; เทรดอย่างมีวินัย<br>สร้างผลลัพธ์อย่างยั่งยืน</p>
+    <a class="telegram" href="https://t.me/GoldAssistTelegram" target="_blank" rel="noopener">
+      <span class="plane">➤</span><span>เข้ากลุ่ม <em>Trade ฟรี</em><small>ในกลุ่มของ <em>Telegram</em></small></span><span style="color:#f7c928;font-size:36px">»</span>
+    </a>
+  </div>
+  <div class="art-wrap"><img src="assets/alpha-gold-hero.png" alt="ALPHA GOLD มาสคอตและกราฟตลาดทองคำ"></div>
 </section>
-<section id="tools"><div class="section-title"><h2>เครื่องมือและบริการของเรา</h2><p>ครบเครื่องสำหรับการติดตามตลาดทองคำ</p></div>
-<div class="features">
-<div class="feature"><div class="ico">◎</div><h3>สัญญาณเทรด</h3><p>BUY / SELL</p></div>
-<div class="feature"><div class="ico">▥</div><h3>บทวิเคราะห์รายวัน</h3><p>M5 / M15 / H1</p></div>
-<div class="feature"><div class="ico">◈</div><h3>เครื่องมือ SMC</h3><p>DZ/SZ • FVG • BOS</p></div>
-<div class="feature"><div class="ico">▦</div><h3>ข่าวเศรษฐกิจ</h3><p>ติดตามปัจจัยสำคัญ</p></div>
-<div class="feature" id="members"><div class="ico">♛</div><h3>สิทธิ์สมาชิก</h3><p>FREE / VIP</p></div>
-</div></section>
-<section id="analysis"><div class="section-title"><h2>ภาพรวมตลาดทองคำ</h2><p>ตัวอย่างหน้าจอแสดงข้อมูล — ยังไม่ใช่ราคาตลาดเรียลไทม์</p></div>
-<div class="market">
-<div class="panel"><h3>🪙 XAUUSD | Gold Spot</h3><div class="price">4,000.00 <small style="font-size:13px">USD/oz</small></div><div class="down">▼ ตัวอย่างข้อมูลจำลอง</div><div class="levels"><span>Pivot</span><b>4,002</b><span>R1</span><b style="color:#ff6262">4,024</b><span>R2</span><b style="color:#ff6262">4,038</b><span>S1</span><b style="color:#00d69a">3,980</b><span>S2</span><b style="color:#00d69a">3,966</b></div></div>
-<div class="panel"><h3>กราฟตัวอย่าง SMC</h3><div class="chart"><div class="zone sell">SZ • SELL ZONE</div><div class="zone fvg">FVG</div><div class="zone buy">DZ • BUY ZONE</div></div></div>
-<div class="panel" id="news"><h3>▤ ข่าวเด่นวันนี้</h3><div class="news-item">🇺🇸 ตัวเลขเศรษฐกิจสหรัฐฯ — ติดตามผลต่อค่าเงินดอลลาร์และทองคำ</div><div class="news-item">🛢️ ราคาน้ำมัน — ปัจจัยที่อาจกระทบเงินเฟ้อ</div><div class="news-item">🌍 ความเสี่ยงภูมิรัฐศาสตร์ — ติดตามแรงซื้อสินทรัพย์ปลอดภัย</div></div>
-</div></section>
-<section class="banner"><div><h2>สมัครสมาชิก ALPHA GOLD ฟรี</h2><p>เริ่มต้นติดตามบทวิเคราะห์และข้อมูลตลาดทองคำ</p></div><button class="btn gold" onclick="openModal('register')">สมัครสมาชิกเลย　➜</button></section>
-<section class="services">
-<div class="service"><span>📊</span><div><b>วิเคราะห์ทองรายวัน</b><small>เทคนิคและปัจจัยพื้นฐาน</small></div></div>
-<div class="service"><span>🛠️</span><div><b>เครื่องมือเทรด</b><small>SMC, DZ/SZ, FVG</small></div></div>
-<div class="service"><span>✈️</span><div><b>Telegram</b><small>ติดตามข่าวและสัญญาณ</small></div></div>
-<div class="service"><span>🟢</span><div><b>ติดต่อเรา</b><small>สอบถามข้อมูลเพิ่มเติม</small></div></div>
+
+<section class="market-strip" aria-label="สินทรัพย์ที่ติดตาม">
+  <div class="market"><strong>XAUUSD</strong><span>● MARKET WATCH</span></div>
+  <div class="market"><strong>DXY</strong><span>● MARKET WATCH</span></div>
+  <div class="market"><strong>BTCUSD</strong><span>● MARKET WATCH</span></div>
+  <div class="market"><strong>USOIL</strong><span>● MARKET WATCH</span></div>
+</section>
+
+<section class="pillars" id="tools">
+  <div class="pillar" id="analysis"><div class="ico">▥</div><b>ANALYZE</b><small>วิเคราะห์ตลาด</small></div>
+  <div class="pillar" id="signals"><div class="ico">⚙</div><b>EXECUTE</b><small>วางแผนเทรด</small></div>
+  <div class="pillar" id="knowledge"><div class="ico">◎</div><b>DISCIPLINE</b><small>เทรดอย่างมีวินัย</small></div>
+  <div class="pillar"><div class="ico">◇</div><b>FREEDOM</b><small>สู่เสรีภาพทางการเงิน</small></div>
 </section>
 </main>
-<footer><div class="wrap foot"><div><div class="brand">Ⓐ ALPHA GOLD</div><p>พื้นที่รวบรวมบทวิเคราะห์และเครื่องมือ<br>สำหรับผู้ติดตามตลาดทองคำ XAUUSD</p></div><div><h4>เมนูหลัก</h4><a href="#home">หน้าแรก</a><a href="#analysis">วิเคราะห์ทอง</a><a href="#tools">เครื่องมือเทรด</a></div><div><h4>บริการสมาชิก</h4><a href="#members">สมัครสมาชิก</a><a href="#" onclick="openModal('login')">เข้าสู่ระบบ</a></div><div><h4>ติดตามเรา</h4><a href="#news">ข่าวสารและประกาศ</a></div></div></footer>
-<div class="modal" id="login"><div class="dialog"><button class="close" onclick="closeModal('login')">×</button><h2>เข้าสู่ระบบ</h2><label>อีเมล</label><input type="email" placeholder="กรอกอีเมล"><label>รหัสผ่าน</label><input type="password" placeholder="กรอกรหัสผ่าน"><button class="btn gold" onclick="demoMessage()">เข้าสู่ระบบ</button><p class="note">นี่เป็นแบบร่างหน้าตาเท่านั้น ระบบเข้าสู่ระบบจริงจะเชื่อมต่อในขั้นตอนถัดไป</p></div></div>
-<div class="modal" id="register"><div class="dialog"><button class="close" onclick="closeModal('register')">×</button><h2>สมัครสมาชิกฟรี</h2><label>ชื่อที่แสดง</label><input type="text" placeholder="ชื่อของคุณ"><label>อีเมล</label><input type="email" placeholder="กรอกอีเมล"><label>รหัสผ่าน</label><input type="password" placeholder="สร้างรหัสผ่าน"><button class="btn gold" onclick="demoMessage()">สร้างบัญชี</button><p class="note">นี่เป็นแบบร่างหน้าตาเท่านั้น ยังไม่มีการบันทึกข้อมูลหรือสร้างบัญชีจริง</p></div></div>
-<script>
-function openModal(id){document.getElementById(id).classList.add('show')}
-function closeModal(id){document.getElementById(id).classList.remove('show')}
-function demoMessage(){alert('หน้านี้เป็นต้นแบบ HTML ยังไม่ได้เชื่อมระบบสมาชิกจริงครับ')}
-document.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('show')}));
-</script>
-</body></html>
+
+<a class="contact-float" href="https://t.me/GoldAssistTelegram" target="_blank" rel="noopener"><span>●</span>ติดต่อเรา »</a>
+<footer>© 2026 ALPHA GOLD. เนื้อหาเพื่อการศึกษาและประกอบการตัดสินใจลงทุน</footer>
+</body>
+</html>
