@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080706">
+<title>ALPHA GOLD | วิเคราะห์ตลาดทองคำ</title>
+<style>
+:root{--gold:#f7c928;--gold2:#ffdf65;--bg:#070706;--muted:#c8c2b5}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:#fff;font-family:Arial,"Noto Sans Thai",Tahoma,sans-serif}
+a{color:inherit;text-decoration:none}
+header{height:86px;display:flex;align-items:center;justify-content:space-between;padding:0 4.5%;border-bottom:1px solid #9d771c;background:#050505;position:sticky;top:0;z-index:10}
+.brand{display:flex;align-items:center;gap:12px;min-width:255px}
+.brand-mark{width:52px;height:52px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:35px;font-weight:900;font-style:italic;box-shadow:0 0 16px #e7ad1b55}
+.brand-name{font-size:27px;font-weight:900;letter-spacing:.5px;line-height:1}
+.brand-tag{font-size:9px;color:var(--gold);letter-spacing:1px;margin-top:5px}
+nav{display:flex;gap:30px;align-items:center;font-size:15px;font-weight:700}
+nav a:hover{color:var(--gold)}
+.nav-actions{display:flex;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:13px;padding:13px 20px;font-weight:800;border:1.5px solid var(--gold);transition:.2s;cursor:pointer}
+.btn-outline{background:#080706;color:#fff}
+.btn-gold{background:linear-gradient(135deg,#ffe36d,#e9ad18);color:#100d05;border:0;box-shadow:0 0 20px #f3bd2a44}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.12)}
+.menu{display:none;background:none;border:1px solid #9a741b;color:var(--gold);font-size:24px;border-radius:8px;padding:5px 12px}
+.hero{max-width:1500px;margin:auto;min-height:610px;padding:50px 4.5% 38px;display:grid;grid-template-columns: .95fr 1.05fr;align-items:center;gap:20px;overflow:hidden;background:radial-gradient(ellipse at 76% 44%,#5b390d55 0,transparent 47%)}
+.kicker{color:var(--gold);font-size:14px;font-weight:800;letter-spacing:1.5px;margin-bottom:42px}
+h1{font-size:clamp(64px,7vw,104px);line-height:.88;letter-spacing:1px;margin:0 0 18px;font-weight:950}
+h1 span{display:block;color:var(--gold)}
+.tagline{font-size:14px;letter-spacing:1px;font-weight:800;margin-bottom:44px}
+.hero h2{font-size:clamp(27px,3vw,39px);line-height:1.25;color:var(--gold);margin:0 0 4px}
+.hero h3{font-size:clamp(21px,2.3vw,30px);line-height:1.35;margin:0 0 18px}
+.description{font-size:19px;color:#d1ccc3;line-height:1.65;margin:0 0 28px}
+.telegram{display:inline-flex;align-items:center;gap:18px;padding:12px 25px 12px 15px;border:3px solid var(--gold);border-radius:60px;box-shadow:0 0 18px #f7c92899,inset 0 0 12px #f7c92822;background:#050505;font-size:clamp(20px,2.3vw,30px);font-weight:900}
+.telegram .plane{width:62px;height:62px;border-radius:50%;background:#0b9fe5;display:grid;place-items:center;font-size:31px;flex:none}
+.telegram em{color:var(--gold);font-style:normal}
+.telegram small{display:block;font-size:16px;font-weight:700}
+.art-wrap{display:flex;align-items:center;justify-content:center;min-width:0}
+.art-wrap img{width:100%;max-width:760px;height:auto;object-fit:contain;filter:drop-shadow(0 0 24px #e4a51b33)}
+.market-strip{border-top:1px solid #9b741d;border-bottom:1px solid #9b741d;display:grid;grid-template-columns:repeat(4,1fr);padding:17px 4.5%;background:#090806}
+.market{padding:0 28px;border-right:1px solid #4d3b19}
+.market:last-child{border:0}
+.market strong{display:block;font-size:14px;letter-spacing:1px}
+.market span{display:block;color:#19d69b;font-size:12px;margin-top:6px}
+.pillars{max-width:1400px;margin:auto;padding:38px 4.5% 55px;display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.pillar{text-align:center;padding:18px 8px;border-right:1px solid #5b461d}
+.pillar:last-child{border:0}
+.pillar .ico{width:65px;height:65px;border:1.5px solid var(--gold);border-radius:50%;display:grid;place-items:center;margin:0 auto 12px;color:var(--gold);font-size:31px}
+.pillar b{display:block;letter-spacing:2px;font-size:16px}
+.pillar small{display:block;color:var(--muted);margin-top:7px;font-size:14px}
+.contact-float{position:fixed;right:26px;bottom:24px;z-index:20;border:2px solid var(--gold);border-radius:50px;background:#090806;color:white;padding:13px 23px;font-size:20px;font-weight:900;box-shadow:0 0 22px #eebd29aa}
+.contact-float span{color:var(--gold);font-size:25px;margin-right:9px}
+footer{text-align:center;color:#8d8576;border-top:1px solid #392d16;padding:20px;font-size:12px}
+@media(max-width:900px){
+ header{height:72px;padding:0 4%}.brand{min-width:0}.brand-mark{width:43px;height:43px;font-size:29px}.brand-name{font-size:21px}.brand-tag{font-size:7px}
+ nav{display:none;position:absolute;top:72px;left:0;right:0;background:#090806;padding:20px;flex-direction:column;gap:18px;border-bottom:1px solid #8c681b}
+ nav.open{display:flex}.menu{display:block}.nav-actions .btn{padding:10px 12px;font-size:13px}
+ .hero{grid-template-columns:1fr;padding:35px 6% 25px;gap:5px}.kicker{margin-bottom:25px;font-size:12px}
+ h1{font-size:68px}.tagline{margin-bottom:28px}.hero h2{font-size:29px}.hero h3{font-size:22px}.description{font-size:16px}
+ .telegram{font-size:22px}.telegram .plane{width:52px;height:52px}.telegram small{font-size:14px}
+ .art-wrap{margin-top:12px}.art-wrap img{max-width:570px}
+ .market-strip{grid-template-columns:repeat(2,1fr);gap:15px}.market{padding:8px 12px}.market:nth-child(2){border:0}
+ .pillars{grid-template-columns:repeat(2,1fr);padding-top:25px}.pillar:nth-child(2){border:0}
+}
+@media(max-width:480px){
+ .brand-name{font-size:18px}.brand-tag{letter-spacing:0}.nav-actions{gap:6px}.nav-actions .btn{padding:9px 10px;font-size:11px}
+ h1{font-size:60px}.hero{padding-top:28px}.telegram{padding:9px 15px 9px 9px;gap:10px;font-size:19px}
+ .telegram .plane{width:46px;height:46px;font-size:25px}.telegram small{font-size:12px}
+ .contact-float{right:12px;bottom:12px;font-size:15px;padding:10px 16px}
+}
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="#home" aria-label="ALPHA GOLD หน้าแรก">
+    <div class="brand-mark">A</div>
+    <div><div class="brand-name">ALPHA GOLD</div><div class="brand-tag">TRADE SMART • GROW STEADY • ACHIEVE FREEDOM</div></div>
+  </a>
+  <button class="menu" onclick="document.querySelector('nav').classList.toggle('open')" aria-label="เปิดเมนู">☰</button>
+  <nav>
+    <a href="#home">หน้าแรก</a><a href="#analysis">วิเคราะห์ตลาด</a><a href="#signals">สัญญาณเทรด</a><a href="#tools">เครื่องมือเทรด</a><a href="#knowledge">ความรู้</a>
+  </nav>
+  <div class="nav-actions">
+    <a class="btn btn-outline" href="#login">เข้าสู่ระบบ</a>
+    <a class="btn btn-gold" href="#register">สมัครสมาชิก</a>
+  </div>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="hero-copy">
+    <div class="kicker">XAUUSD&nbsp; • &nbsp;FOREX&nbsp; • &nbsp;TRADING&nbsp; • &nbsp;INVESTMENT</div>
+    <h1>ALPHA <span>GOLD</span></h1>
+    <div class="tagline">TRADE SMART&nbsp; • &nbsp;GROW STEADY&nbsp; • &nbsp;ACHIEVE FREEDOM</div>
+    <h2>มากกว่าการเทรด</h2>
+    <h3>คือเส้นทางสู่ “อิสรภาพทางการเงิน”</h3>
+    <p class="description">วิเคราะห์อย่างมีระบบ&nbsp; เทรดอย่างมีวินัย<br>สร้างผลลัพธ์อย่างยั่งยืน</p>
+    <a class="telegram" href="https://t.me/GoldAssistTelegram" target="_blank" rel="noopener">
+      <span class="plane">➤</span><span>เข้ากลุ่ม <em>Trade ฟรี</em><small>ในกลุ่มของ <em>Telegram</em></small></span><span style="color:#f7c928;font-size:36px">»</span>
+    </a>
+  </div>
+  <div class="art-wrap"><img src="assets/alpha-gold-hero.png" alt="ALPHA GOLD มาสคอตและกราฟตลาดทองคำ"></div>
+</section>
+
+<section class="market-strip" aria-label="สินทรัพย์ที่ติดตาม">
+  <div class="market"><strong>XAUUSD</strong><span>● MARKET WATCH</span></div>
+  <div class="market"><strong>DXY</strong><span>● MARKET WATCH</span></div>
+  <div class="market"><strong>BTCUSD</strong><span>● MARKET WATCH</span></div>
+  <div class="market"><strong>USOIL</strong><span>● MARKET WATCH</span></div>
+</section>
+
+<section class="pillars" id="tools">
+  <div class="pillar" id="analysis"><div class="ico">▥</div><b>ANALYZE</b><small>วิเคราะห์ตลาด</small></div>
+  <div class="pillar" id="signals"><div class="ico">⚙</div><b>EXECUTE</b><small>วางแผนเทรด</small></div>
+  <div class="pillar" id="knowledge"><div class="ico">◎</div><b>DISCIPLINE</b><small>เทรดอย่างมีวินัย</small></div>
+  <div class="pillar"><div class="ico">◇</div><b>FREEDOM</b><small>สู่เสรีภาพทางการเงิน</small></div>
+</section>
+</main>
+
+<a class="contact-float" href="https://t.me/GoldAssistTelegram" target="_blank" rel="noopener"><span>●</span>ติดต่อเรา »</a>
+<footer>© 2026 ALPHA GOLD. เนื้อหาเพื่อการศึกษาและประกอบการตัดสินใจลงทุน</footer>
+</body>
+</html>
