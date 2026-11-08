@@ -71,4 +71,54 @@ function close(){modal.classList.remove('show')}document.getElementById('closeMo
 document.getElementById('memberForm').addEventListener('submit',e=>{e.preventDefault();notice.textContent='แบบฟอร์มทดลองทำงานแล้ว แต่ยังไม่ได้สร้างบัญชีหรือเข้าสู่ระบบจริง ขั้นต่อไปจะเชื่อมระบบสมาชิกที่ปลอดภัย';});
 document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('nav').classList.toggle('open'));document.querySelectorAll('#nav a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nav').classList.remove('open')));
 </script>
+
+<!-- ALPHA GOLD SUPABASE AUTH -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL = "https://afaqbsjkfusvzxzxqkb.supabase.co";
+const SUPABASE_KEY = "sb_publishable_L35VcORBG3VEIJ8X1T7Ezw_01Go2TxE";
+const alphaSupabase = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+
+let alphaAuthMode = "login";
+
+document.querySelectorAll("[data-modal]").forEach(button => {
+  button.addEventListener("click", () => {
+    alphaAuthMode =
+      button.dataset.modal === "register" ? "register" : "login";
+  }, true);
+});
+
+document.getElementById("memberForm").addEventListener("submit", async function(event) {
+  event.preventDefault();
+
+  const notice = document.getElementById("formNotice");
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
+
+  notice.textContent = "กำลังดำเนินการ...";
+
+  try {
+    let result;
+
+    if (alphaAuthMode === "register") {
+      result = await alphaSupabase.auth.signUp({ email, password });
+    } else {
+      result = await alphaSupabase.auth.signInWithPassword({ email, password });
+    }
+
+    if (result.error) throw result.error;
+
+    notice.textContent = alphaAuthMode === "register"
+      ? "สมัครสมาชิกแล้ว กรุณาตรวจสอบอีเมลเพื่อยืนยันบัญชี"
+      : "เข้าสู่ระบบสำเร็จ ยินดีต้อนรับสู่ ALPHA GOLD";
+
+  } catch (error) {
+    notice.textContent = "ไม่สำเร็จ: " + error.message;
+  }
+});
+</script>
+
 </body></html>
